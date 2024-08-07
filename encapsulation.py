@@ -16,22 +16,21 @@ class Employee:
         self.employment_contract = employment_contract
         self.__salary = salary
 
-    def getMethod(self)-> None:
+    def getMethod(self)-> int:
         """method returns the variable value
         """
         return self.setMethod()
 
-    def setMethod(self, age) -> None:
+    def setMethod(self, new_age) -> None:
         """setter method sets the value
         """
-        self.age: List[str] =  age
-        for i in age:
-            if (self.__age == age) and (self.__age > age):
+        self.new_age: int = 34
+        self.age: List[int]  = [23, 45, 65, 31, 30, 33, 22]
+        for i in self.__age:
+            if (self.__age != new_age) and (self.__age > new_age):
                 return ("age is the same!")
             else:
                 return ("Age is not the same!")
-
-#Nexted method in encapsulation
 
     def fetch_employee_info(self, prefix):
         result = [i for i in self.name if i.startswith(prefix)]
@@ -43,6 +42,7 @@ class Employee:
         else:
             return "what a great experience to meet them!"
 
+#Nexted method in encapsulation
     def process(self, numbers):
         def helper(n):
             # This is a simple helper function
@@ -52,7 +52,6 @@ class Employee:
         for number in numbers:
             results.append(helper(number))
         return results
-
 
 
 
@@ -66,11 +65,11 @@ def main():
     #print(emp.__age)
     #print(emp.__salary) #since it is private, we cannot access it directly, we need a sette and getter method to be able to access it
     #print(emp.name)
-    #print(emp.setMethod(age=age))
+    print(emp.setMethod(new_age=34))
     #print(emp.getMethod())
-    print(emp.fetch_employee_info(prefix = "T"))
-    processor = Employee(name=name, age=age, project=project, employment_contract=employment_contract, salary=salary)
-    print(processor.process([1, 2, 3, 4]))
+    #print(emp.fetch_employee_info(prefix = "T"))
+    #processor = Employee(name=name, age=age, project=project, employment_contract=employment_contract, salary=salary)
+    #print(processor.process([1, 2, 3, 4]))
 
 if __name__ == "__main__":
     main()

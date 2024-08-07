@@ -13,7 +13,6 @@ from torch.utils.data import DataLoader
 class TrainingModel:
     epoch: int = 5
     learning_rate: float = 0.01
-    #optimizer: Optimizer
 
 
 
@@ -32,12 +31,12 @@ def dataloader(train_data, batch_size: int = 64, shuffle: bool = True) -> Tuple[
     """_summary_
 
     Args:
-        train_data (_type_): _description_
-        batch_size (int, optional): _description_. Defaults to 64.
-        shuffle (bool, optional): _description_. Defaults to True.
+        train_data: dataset for training
+        batch_size: size of data to be passed into the model, defaults to 64.
+        shuffle: Defaults to True.
 
     Returns:
-        Tuple[DataLoader, DataLoader]: _description_
+        Tuple[DataLoader, DataLoader]: 
     """
     train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=shuffle)
     return train_loader
@@ -60,7 +59,7 @@ class SimpleNN(nn.Module):
 
 # 5. Training Loop
 def train_model(model: SimpleNN, training_model: TrainingModel) -> Tuple[float, float]:
-    """_summary_
+    """training model
 
     Args:
         model: the main model
