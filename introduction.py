@@ -1,4 +1,5 @@
 from typing import List
+import dataclass as dataclass
 
 
 class Car:
@@ -37,11 +38,19 @@ class Car:
                 return self.time
             else:
                 return (speed * time)
+
     def __repr__(self) -> List[str]:
         return f"The Mileage of the car {self.Mileage}"
     
     def __str__(self) -> object:
-        return f"how does this work: {self.colour}"   #this dunder methods enables us to see the varaibles when we create an object of the class!
+        return f"how does this work: {self.colour}"                         #this dunder methods enables us to see the varaibles when we create an object of the class!
+
+
+@dataclass
+class Library:
+  name: str
+  author: str
+  year: int
 
 
 if __name__ == "__main__":
@@ -50,13 +59,17 @@ if __name__ == "__main__":
     #print(myobj)                                                       #This will print the memory address of the  object/instance of the class, instead of the details we want to see
     #print(repr(myobj))
     # print(str(myobj))                                    
-    print(myobj.brake())                                            #you can call the object.method
-    print(myobj.colour)                                             #you can call the object.properties
+    print(myobj.brake())                                                    #you can call the object.method
+    print(myobj.colour)                                                     #you can call the object.properties
     obj3 = Car(["black", "blue"], 2, 3800, result=5)
-    #print(obj3)                                                #This print the memory address of the variable obj3
-                                                                #To see the main properties, we could use a dataclass or a dunder method
+    #print(obj3)                                                        #This print the memory address of the variable obj3
+                                                                        #To see the main properties, we could use a dataclass or a dunder method
     obje2 = Car(["black", "blue"], 2, 3800,result=5)
     print(obje2.calculate_distance(850, 20))
+    outcome_of_class = Library("John", "Doe", 2020)
+    print(outcome_of_class)
+    print(outcome_of_class)                                                 #it returns a nice representation of the object with the dataclass.
+    
     
     
 

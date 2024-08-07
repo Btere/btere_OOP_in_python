@@ -6,6 +6,17 @@ We have 4 fundamentals for writing OOP in programming languages.
 
 1., The super(write_child_class_name_here).__init__(variable_name) is used in the child class that is inheriting the properties and method of the parent class, so we can have access to the constructor of the parent class. We pass all the parameter in the parent class constructor into the child class constructor, and the variable name into the super(write_varaible_namee). use the print method here. to see how it work, but you must create an object of the class, to get an output in the console. When a class B is inheriting, it just know all the features and propeties of the class A to use them as an additional functionalites for itself.
 
+## Why Use super()
+Using super() in the constructor of a subclass has several benefits:
+
+### Code Reusability:
+
+It allows you to reuse the initialization logic defined in the parent class without duplicating code.
+If the parent class has complex initialization logic, you can simply call it rather than rewriting it in the subclass.
+
+If you need to change the initialization logic of the parent class, you only need to update it in one place. The subclasses will automatically use the updated logic.
+This makes the code easier to maintain and less error-prone.
+
 
 ## Encapsulation
 
@@ -28,5 +39,9 @@ When you have complex logic that needs to share some local state, nested methods
 
 
 ## Method overloading and overrriding
+
+Method overriding in Python is straightforward and follows the principles of inheritance and polymorphism. When a childclass defines a method with the same name, parameters, and return type as a method in its superclass, it overrides the method in the parentclass. Method overriding is a key aspect of achieving polymorphism.
+
+In statically typed languages like Java, method overloading allows multiple methods with the same name but different parameter lists (different types, numbers, or both). Python does not support method overloading in the same way. Instead, you can achieve similar functionality using default arguments or variable-length arguments (*args).
 
 
