@@ -10,15 +10,11 @@ import logging
 
 from encap import Table
 
-
-from typing import List
-from encap import Table  # Importing Table class
-
+id_counter = itertools.count(1)
 
 def generate_id_number():
     """Generate a unique ID number for tables."""
-    import itertools
-    return next(itertools.count(1))
+    return next(id_counter)
 
 
 class Restaurant:
@@ -32,7 +28,7 @@ class Restaurant:
         table_id = generate_id_number()
         table = Table(table_id, capacity)
         self.tables.append(table)
-        print(f"Table {table.__str__()} has been added.")
+        #print(f" {table.__str__()} has been added.")
         return table  # Returning the table instance for further use
 
 
@@ -46,7 +42,7 @@ def main():
     # Try to reserve the table
     try:
         table1.reserve_the_table()
-        print(f"Reservation successful for table: {table1.__str__()}")
+        print(f"Reservation successful for: {table1.__str__()}")
     except ValueError as e:
         print(e)
 

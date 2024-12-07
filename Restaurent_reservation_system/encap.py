@@ -1,5 +1,6 @@
-"""Encapsulation protect or hide internal data, that users are not suppoed to see, only exposing what's necessary.
-Users should be able to know if a table is availabe, if yes, then make reservation, and we get the capacity
+"""Encapsulation protect or hide internal data, that users are not supposed to see, only exposing what's necessary.
+Users should be able to know if a table is availabe, if yes, then make reservation, and we get the capacity. For the Table, information we need to hide from uswers are:
+ad_table, update_date, table_status.
 
 """
 class Table:
@@ -8,22 +9,22 @@ class Table:
         self.__capacity = capacity
         self.__status = status
     
-    def table_is_available(self) -> bool:
+    def __table_is_available(self) -> bool:
         """Returns whether the table is available for reservation"""
         return self.__status == "available"
     
-    def reserve_the_table(self) -> None:
+    def __reserve_the_table(self) -> None:
         """Reserves the table if available"""
         if self.table_is_available():
             self.__status = "reserved"
         else:
             raise ValueError(f"Table {self.__table_id} is already occupied.")
     
-    def get_capacity(self) -> int:
+    def __get_capacity(self) -> int:
         """Returns the table's capacity"""
         return self.__capacity
 
-    def get_status(self) -> str:
+    def __get_status(self) -> str:
         """Returns the table's status"""
         return self.__status
 
